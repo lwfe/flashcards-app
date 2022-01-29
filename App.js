@@ -11,8 +11,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={homeScreen} />
-        <Stack.Screen name="Add Card" component={addCard} />
+        <Stack.Screen
+          name="FlashCards"
+          component={homeScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Adicionar Card"
+          component={addCard}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
