@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   View,
   Text,
@@ -7,11 +7,15 @@ import {
   SafeAreaView,
   TextInput,
 } from 'react-native';
+import {Context} from '../context/Provider';
 
 // Componentes
 import Button from '../components/button';
 
 export default function addCard({navigation}) {
+  const {card} = useContext(Context);
+  const {setCard} = useContext(Context);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>

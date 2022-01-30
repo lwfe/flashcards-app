@@ -1,17 +1,13 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {FlatList, View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import {Context} from '../context/Provider';
 
 // Componentes
 import Button from '../components/button';
 import Card from '../components/card';
 
 export default function homeScreen({navigation}) {
-  const [card, setCard] = useState([
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'に',
-    },
-  ]);
+  const {card} = useContext(Context);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -24,7 +20,7 @@ export default function homeScreen({navigation}) {
           horizontal={false}
           numColumns={'2'}
           data={card}
-          renderItem={({item}) => <Card front={item.title} />}
+          renderItem={({item}) => <Card front={item.front} back={item.back} />}
           keyExtractor={item => item.id}
         />
       </View>
