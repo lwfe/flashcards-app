@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {FlatList, View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import {Context} from '../context/Provider';
 
@@ -21,7 +21,6 @@ export default function homeScreen({navigation}) {
           numColumns={'2'}
           data={card}
           renderItem={({item}) => <Card front={item.front} back={item.back} />}
-          keyExtractor={item => item.id}
         />
       </View>
       <View style={styles.buttonContainer}>

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {
   View,
   Text,
@@ -6,15 +6,34 @@ import {
   TouchableOpacity,
   SafeAreaView,
   TextInput,
+  Alert,
 } from 'react-native';
 import {Context} from '../context/Provider';
 
 // Componentes
 import Button from '../components/button';
 
-export default function addCard({navigation}) {
-  const {card} = useContext(Context);
+export default function addCardScreen({navigation}) {
   const {setCard} = useContext(Context);
+
+  const [front, setFront] = useState('');
+  const [back, setBack] = useState('');
+
+  function addCard(front, back) {
+    if (front !== '' && back !== '') {
+      setCard(card => [...card, {front: front, back: back}]);
+      navigation.goBack();
+    } else {
+      Alert.alert('Erro', 'Preencha todos os campos', [
+        {
+          text: 'Ok',
+          onPress: () => {
+            return;
+          },
+        },
+      ]);
+    }
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -24,13 +43,21 @@ export default function addCard({navigation}) {
 
       <View style={styles.newCardContainer}>
         <Text style={styles.inputText}>Frente</Text>
-        <TextInput style={styles.textInput} />
+        <TextInput
+          style={styles.textInput}
+          value={front}
+          onChangeText={text => setFront(text)}
+        />
         <Text style={styles.inputText}>Verso</Text>
-        <TextInput style={styles.textInput} />
+        <TextInput
+          style={styles.textInput}
+          value={back}
+          onChangeText={text => setBack(text)}
+        />
       </View>
 
       <View style={styles.buttonContainer}>
-        <Button title="Adicionar" />
+        <Button title="Adicionar" onPress={() => addCard(front, back)} />
 
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={styles.cancelButton}>Cancelar</Text>

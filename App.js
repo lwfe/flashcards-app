@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Provider} from './context/Provider';
 
 import homeScreen from './screens/homeScreen';
-import addCard from './screens/addCard';
+import addCardScreen from './screens/addCard';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +20,7 @@ export default function App() {
           />
           <Stack.Screen
             name="Adicionar Card"
-            component={addCard}
+            component={addCardScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
