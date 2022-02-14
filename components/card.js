@@ -3,11 +3,7 @@ import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 
 export default function Card(props) {
   return (
-    <TouchableOpacity
-      style={styles.card}
-      onPress={() => {
-        alert(props.back);
-      }}>
+    <TouchableOpacity style={styles.card} onPress={props.click}>
       <Text style={styles.cardText}>{props.front}</Text>
     </TouchableOpacity>
   );

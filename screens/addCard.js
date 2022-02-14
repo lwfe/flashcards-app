@@ -21,7 +21,7 @@ export default function addCardScreen({navigation}) {
 
   function addCard(front, back) {
     if (front !== '' && back !== '') {
-      setCard(card => [...card, {front: front, back: back}]);
+      setCard(card => [...card, {id: front + back, front: front, back: back}]);
       navigation.goBack();
     } else {
       Alert.alert('Erro', 'Preencha todos os campos', [
