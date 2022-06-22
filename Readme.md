@@ -1,9 +1,33 @@
 # FlashCards App
 
-## Introdução
+> Status: Finished ✅
 
-Aplicação de FlashCards desenvolvida com <a href="https://reactnative.dev/">React Native</a>
+### A Mobile app developed to help you in your studies
 
-## Projeto (Figma)
+## Features:
++ Create Flash Card
++ Read Flash Card
++ Delete Flash Card
 
-<img src="https://media-exp1.licdn.com/dms/image/C4D22AQE-eKDyg0_8rQ/feedshare-shrink_2048_1536/0/1643463532858?e=1646870400&v=beta&t=UrWwhdnf6V-4kDoiUhqleuD1M6JNg50YT56ZM48EpoA">
+## Features that will be developed in the future:
++ Update Flash Card
++ Flip Card Animation
++ Drag and Drop List
+
+## Tecnologies Used:
+<table>
+  <tr>
+    <td>React Native</td>
+  </tr>
+  <tr>
+    <td>0.66.4</td>
+  </tr>
+</table>
+
+## How to run the app (Android):
+1. Open your terminal
+2. Paste and run: git clone https://github.com/lwfe/flashcards-app
+3. Paste and run: cd flashcards-app
+4. Paste and run: npm install
+5. Before step 6, make sure you have an android emulator in your computer
+6. Paste and run: npm run android
