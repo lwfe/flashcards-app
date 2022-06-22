@@ -1,6 +1,6 @@
 # FlashCards App
 
-> Status: Finished ✅
+> Status: Developing ⚠️
 
 ### A Mobile app developed to help you in your studies
 
